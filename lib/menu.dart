@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 
 
 class MyHomePage extends StatelessWidget {
-  MyHomePage({super.key, required ColorScheme colorScheme});
+  MyHomePage({super.key});
 
   final String nama = "Oscar Glad Winfi Simanullang";
   final String npm = "2406411906";

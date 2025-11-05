@@ -31,7 +31,7 @@ class MyApp extends StatelessWidget {
         // tested with just a hot reload.
         colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blueGrey).copyWith(secondary: Colors.blueGrey[400]),
       ),
-      home: MyHomePage(colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.blue).copyWith(secondary: Colors.blueAccent[400])),
+      home: MyHomePage(),
     );
   }
 }
