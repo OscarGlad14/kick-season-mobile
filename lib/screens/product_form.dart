@@ -97,7 +97,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                     if (value == null || value.isEmpty) {
                       return "Nama produk harus diisi";
                     }
-                    if (value.length <= 4){
+                    if (value.length < 4){
                       return "Nama produk terlalu singkat";
                     }
                     if (value.length == 255){
@@ -132,7 +132,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
                     if (value == null || value.isEmpty) {
                       return "Brand produk harus diisi";
                     }
-                    if(value.length <= 2){
+                    if(value.length < 2){
                       return "Brand produk terlalu singkat";
                     }
                     if(value.length == 255){
