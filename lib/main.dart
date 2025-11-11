@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:kick_season/menu.dart';
+import 'package:kick_season/screens/menu.dart';
 
 void main() {
   runApp(const MyApp());
