@@ -91,8 +91,8 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
-        );
-    }
+    );
+  }
 }
 
 class InfoCard extends StatelessWidget {
