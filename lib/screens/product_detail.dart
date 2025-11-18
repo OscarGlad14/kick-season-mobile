@@ -22,32 +22,18 @@ class ProductDetailPage extends StatelessWidget {
         foregroundColor: Colors.white,
       ),
       body: SingleChildScrollView(
-        child: Column(
+      child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            // Thumbnail image
-            if (product.fields.thumbnail != null && product.fields.thumbnail!.isNotEmpty)
-              Image.network(
-                'http://localhost:8000/proxy-image/?url=${Uri.encodeComponent(product.fields.thumbnail!)}',
-                width: double.infinity,
-                height: 250,
-                fit: BoxFit.cover,
-                errorBuilder: (context, error, stackTrace) => Container(
-                  height: 250,
-                  color: Colors.grey[300],
-                  child: const Center(
-                    child: Icon(Icons.broken_image, size: 50),
-                  ),
-                ),
-              ),
-            
-            Padding(
-              padding: const EdgeInsets.all(16.0),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
+            children: [
+              Padding(
+                padding: const EdgeInsets.all(16.0),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: [
                   // Category and IsFeatured
                   Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Container(
                         padding: const EdgeInsets.symmetric(
@@ -84,7 +70,48 @@ class ProductDetailPage extends StatelessWidget {
                         ),
                     ],
                   ),
-                  const SizedBox(height: 8),
+                   const SizedBox(height: 12),
+
+                // Thumbnail image
+                if (product.fields.thumbnail != null && product.fields.thumbnail!.isNotEmpty)
+                  Image.network(
+                    'http://localhost:8000/proxy-image/?url=${Uri.encodeComponent(product.fields.thumbnail!)}',
+                    width: double.infinity,
+                    height: 250,
+                    fit: BoxFit.cover,
+                    errorBuilder: (context, error, stackTrace) => Container(
+                      height: 250,
+                      color: Colors.grey[300],
+                      child: const Center(
+                        child: Icon(Icons.broken_image, size: 50),
+                      ),
+                    ),
+                  ),
+                  const SizedBox(height: 12),
+
+                  // Views and Date
+                  Row(
+                     children: [
+                      Text(
+                        _formatDate(product.fields.createdAt),
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                      const SizedBox(width: 8),
+
+                      Text(
+                        '${product.fields.productViews} views',
+                        style: TextStyle(
+                          fontSize: 12,
+                          color: Colors.grey[600],
+                        ),
+                      ),
+                      const SizedBox(width: 12),
+                    ],
+                  ),  
+                  const SizedBox(height: 12),
 
                   // Title
                   Text(
@@ -121,30 +148,6 @@ class ProductDetailPage extends StatelessWidget {
                     ],
                   ),
                   const Divider(height: 8),
-
-                  // Views and Date
-                  Row(
-                     children: [
-                      Icon(Icons.visibility, size: 16, color: Colors.grey[600]),
-                      const SizedBox(width: 4),
-                      Text(
-                        '${product.fields.productViews} views',
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey[600],
-                        ),
-                      ),
-                      const SizedBox(width: 12),
-                      Text(
-                        _formatDate(product.fields.createdAt),
-                        style: TextStyle(
-                          fontSize: 12,
-                          color: Colors.grey[600],
-                        ),
-                      ),
-                    ],
-                  ),  
-                  const SizedBox(height: 16),
 
                   // Full content
                   Text(

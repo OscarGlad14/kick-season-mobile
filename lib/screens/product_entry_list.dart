@@ -190,7 +190,6 @@ class _ProductEntryListPageState extends State<ProductEntryListPage> {
                 ],
               ),
             ),
-          
           const SizedBox(height: 8),
           
           // Product List
