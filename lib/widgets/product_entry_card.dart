@@ -83,7 +83,7 @@ class ProductEntryCard extends StatelessWidget {
                   borderRadius: BorderRadius.circular(6),
                   child: (product.fields.thumbnail?.isNotEmpty ?? false)
                       ? Image.network(
-                          'http://localhost:8000/proxy-image/?url=${Uri.encodeComponent(product.fields.thumbnail!)}',
+                          'https://oscar-glad-footballnews.pbp.cs.ui.ac.id/proxy-image/?url=${Uri.encodeComponent(product.fields.thumbnail!)}',
                           height: 280,
                           width: double.infinity,
                           fit: BoxFit.cover,

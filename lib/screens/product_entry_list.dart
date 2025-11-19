@@ -19,7 +19,7 @@ class _ProductEntryListPageState extends State<ProductEntryListPage> {
   final TextEditingController _searchController = TextEditingController();
 
   Future<List<ProductEntry>> fetchProduct(CookieRequest request) async {
-    String url = 'http://localhost:8000/show-json-filtered/?';
+    String url = 'https://oscar-glad-footballnews.pbp.cs.ui.ac.id/show-json-filtered/?';
     
     if (currentFilter.isNotEmpty) {
       url += 'filter=$currentFilter&';

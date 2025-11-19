@@ -305,7 +305,7 @@ class _ProductFormPageState extends  State<ProductFormPage> {
                     onPressed: () async {
                       if (_formKey.currentState!.validate()) {                        
                         final response = await request.postJson(
-                          "http://localhost:8000/create-flutter/",
+                          "https://oscar-glad-footballnews.pbp.cs.ui.ac.id/create-flutter/",
                           jsonEncode({
                             "name": _name,              // ✅ FIXED: Ganti dari "title"
                             "brand": _brand,
