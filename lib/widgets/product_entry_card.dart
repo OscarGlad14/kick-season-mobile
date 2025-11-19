@@ -11,6 +11,8 @@ class ProductEntryCard extends StatelessWidget {
     required this.onTap,
   });
 
+  // Trigger
+
   String _formatDate(DateTime date) {
     // Simple date formatter without intl package
     final months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 
